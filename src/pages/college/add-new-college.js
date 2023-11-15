@@ -9,7 +9,7 @@
 // };
 // export default AddNewCollege;
 // MultistepForm.js
-
+import About from "./Form/About";
 import DashboardLayout from "../../layouts/Dashboard";
 import React, { useState } from "react";
 import { Button, Container, Stepper, Step, StepLabel } from "@mui/material";
@@ -92,7 +92,7 @@ const AddNewCollege = () => {
 };
 
 // Sample step components (replace with your own step components)
-const About = () => <div>About Content</div>;
+// const About = () => <div>About Content</div>;
 const ContactDetails = () => <div>Contact Details Content</div>;
 const ManagementContact = () => <div>ManagementContact Content</div>;
 const Exams = () => <div>Exams Content</div>;
