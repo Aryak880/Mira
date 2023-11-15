@@ -140,14 +140,17 @@ const pagesSection = [
           {
             href: "",
             title: "About",
+            step: 0,
           },
           {
             href: "",
             title: "Contact Details",
+            step: 1,
           },
           {
-            href: "/college/add-new-college/management-contact",
+            href: "",
             title: "Management Contact",
+            step: 2,
           },
           { href: "/college/add-new-college/exams", title: "Exams" },
           {

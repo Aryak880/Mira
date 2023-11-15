@@ -1,10 +1,15 @@
 import React from "react";
-
 import SidebarNavListItem from "./SidebarNavListItem";
 import SidebarNavList from "./SidebarNavList";
+import { toStep } from "../../redux/slices/add-new-college-step-form";
+import { useDispatch } from "react-redux";
 
-const reduceChildRoutes = (props) => {
+const ReduceChildRoutes = (props) => {
+  const dispatch = useDispatch();
   const { items, page, depth, currentRoute } = props;
+  const handleMultiStep = (step) => {
+    dispatch(toStep(step));
+  };
 
   if (page.children) {
     const open = currentRoute.includes(page.href);
@@ -31,6 +36,7 @@ const reduceChildRoutes = (props) => {
         key={page.title}
         badge={page.badge}
         title={page.title}
+        onClick={page.step >= 0 ? handleMultiStep(page.step) : undefined}
       />
     );
   }
@@ -38,4 +44,4 @@ const reduceChildRoutes = (props) => {
   return items;
 };
 
-export default reduceChildRoutes;
+export default ReduceChildRoutes;

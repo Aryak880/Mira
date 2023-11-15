@@ -123,8 +123,8 @@ const About = () => {
               borderRadius="50%"
               p={2}
               textAlign="center"
-              width="100%"
-              minHeight={100}
+              width={90}
+              height={90}
               display="flex"
               flexDirection="column"
               justifyContent="center"
@@ -138,7 +138,7 @@ const About = () => {
                 type="file"
                 onChange={handleFileChange}
               />
-              <Typography variant="body2" color="primary">
+              <Typography variant="inherit" color="primary">
                 + Add Logo
               </Typography>
             </Box>
