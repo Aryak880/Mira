@@ -87,6 +87,8 @@ const SidebarNavListItem = (props) => {
     open: openProp = false,
   } = props;
 
+  if (href === "") console.log(123);
+
   const { pathname } = useRouter();
 
   const [open, setOpen] = React.useState(openProp);

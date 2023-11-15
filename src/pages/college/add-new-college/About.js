@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import DashboardLayout from "../../../layouts/Dashboard";
 import {
+  Box,
   Button,
   ButtonGroup,
   Checkbox,
@@ -7,22 +9,54 @@ import {
   TextField,
   FormControl,
   InputLabel,
-  Select,
-  MenuItem,
   Container,
   Typography,
 } from "@mui/material";
+
 const daysOfWeek = [
-  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
+  "Sunday",
 ];
 
-const Step1 = () => {
+const ButtonStyling = {
+  color: "#8C8C8C",
+  textAlign: "center",
+  fontFamily: "Inter",
+  fontSize: "11px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "20px",
+  letterSpacing: "-0.22px",
+  margin: "5px",
+  border: "1px solid",
+  borderRadius: 0,
+};
+
+const InpubLabelTextStyling = {
+  color: "#000",
+  fontFamily: "Inter",
+  fontSize: "14px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "18px",
+};
+
+const AboutHeadingTextStyle = {
+  color: "#263238",
+  fontFamily: "Inter",
+  fontSize: "16px",
+  fontStyle: "italic",
+  fontWeight: 900,
+  lineHeight: "45px",
+  letterSpacing: "-0.32px",
+};
+
+const About = () => {
   const [selectedDays, setSelectedDays] = useState([]);
 
   const toggleDay = (day) => {
@@ -34,6 +68,12 @@ const Step1 = () => {
       setSelectedDays([...selectedDays, day]);
     }
   };
+
+  const selectAllDays = () => {
+    setSelectedDays(daysOfWeek);
+  };
+
+  const isAllSelected = selectedDays.length === daysOfWeek.length;
 
   const [formData, setFormData] = useState({
     image: null,
@@ -54,13 +94,13 @@ const Step1 = () => {
 
   return (
     <Container>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" gutterBottom style={AboutHeadingTextStyle}>
         About
       </Typography>
       <Grid container spacing={2}>
         {/* Row 1 */}
-        <Grid item xs={12} sm={4}>
-          <FormControl fullWidth>
+        <Grid item xs={12} sm={2}>
+          {/* <FormControl fullWidth>
             <InputLabel htmlFor="image">Image</InputLabel>
             <input
               type="file"
@@ -68,10 +108,45 @@ const Step1 = () => {
               id="image"
               onChange={handleFileChange}
             />
-          </FormControl>
+          </FormControl> */}
+          <label
+            htmlFor="image"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              border={1}
+              borderColor="primary.main"
+              borderRadius="50%"
+              p={2}
+              textAlign="center"
+              width="100%"
+              minHeight={100}
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              cursor="pointer"
+            >
+              <input
+                accept="image/*"
+                style={{ display: "none" }}
+                id="image"
+                type="file"
+                onChange={handleFileChange}
+              />
+              <Typography variant="body2" color="primary">
+                + Add Logo
+              </Typography>
+            </Box>
+          </label>
         </Grid>
-        <Grid item xs={12} sm={8}>
-          <Typography>
+
+        <Grid item xs={12} sm={10}>
+          <Typography style={InpubLabelTextStyling}>
             Add short 2 line description about your coaching class
           </Typography>
           <TextField
@@ -83,7 +158,7 @@ const Step1 = () => {
         </Grid>
         {/* Row 2 */}
         <Grid item xs={12}>
-          <Typography>
+          <Typography style={InpubLabelTextStyling}>
             Add detailed description about your coaching class
           </Typography>
           <TextField
@@ -93,28 +168,23 @@ const Step1 = () => {
             onChange={handleInputChange("textField2")}
           />
         </Grid>
+
         {/* Row 3 */}
+
         <Grid item xs={12} sm={6}>
-          {/* <FormControl fullWidth>
-            <InputLabel htmlFor="dayOfWeek">Day of Week</InputLabel>
-            <Select
-              value={formData.dayOfWeek}
-              onChange={handleInputChange("dayOfWeek")}
-              inputProps={{
-                name: "dayOfWeek",
-                id: "dayOfWeek",
-              }}
+          <ButtonGroup
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            <Button
+              onClick={selectAllDays}
+              disabled={isAllSelected}
+              style={ButtonStyling}
             >
-              <MenuItem value="Monday">Monday</MenuItem>
-              <MenuItem value="Tuesday">Tuesday</MenuItem>
-              <MenuItem value="Wednesday">Wednesday</MenuItem>
-              <MenuItem value="Thursday">Thursday</MenuItem>
-              <MenuItem value="Friday">Friday</MenuItem>
-              <MenuItem value="Saturday">Saturday</MenuItem>
-              <MenuItem value="Sunday">Sunday</MenuItem>
-            </Select>
-          </FormControl> */}
-          <ButtonGroup>
+              Select All
+            </Button>
             {daysOfWeek.map((day) => (
               <Checkbox
                 key={day}
@@ -124,11 +194,12 @@ const Step1 = () => {
                 style={{ display: "none" }} // Hide the actual checkbox input
               />
             ))}
-            {daysOfWeek.map((day) => (
+            {daysOfWeek.map((day, index) => (
               <Button
                 key={day}
                 variant={selectedDays.includes(day) ? "contained" : "outlined"}
                 onClick={() => toggleDay(day)}
+                style={ButtonStyling}
               >
                 {day}
               </Button>
@@ -136,11 +207,13 @@ const Step1 = () => {
           </ButtonGroup>
         </Grid>
         <Grid item xs={12} sm={6}>
+          <Typography>Hours of Operation</Typography>
           <Grid container spacing={2}>
+            <Typography>Open</Typography>
             <Grid item xs={6}>
               <TextField
                 fullWidth
-                label="Start Time"
+                // label="Open"
                 type="time"
                 value={formData.startTime}
                 onChange={handleInputChange("startTime")}
@@ -150,9 +223,10 @@ const Step1 = () => {
               />
             </Grid>
             <Grid item xs={6}>
+              <Typography>Close</Typography>
               <TextField
                 fullWidth
-                label="End Time"
+                // label="Close"
                 type="time"
                 value={formData.endTime}
                 onChange={handleInputChange("endTime")}
@@ -164,14 +238,12 @@ const Step1 = () => {
           </Grid>
         </Grid>
       </Grid>
-      {/* Add additional styling or spacing as needed */}
-      {/* <Box mt={2}>
-        <Button variant="contained" color="primary">
-          Next
-        </Button>
-      </Box> */}
     </Container>
   );
 };
 
-export default Step1;
+About.getLayout = function getLayout(page) {
+  return <DashboardLayout>{page}</DashboardLayout>;
+};
+
+export default About;

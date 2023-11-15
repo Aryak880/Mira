@@ -9,10 +9,15 @@
 // };
 // export default AddNewCollege;
 // MultistepForm.js
-import About from "./Form/About";
-import DashboardLayout from "../../layouts/Dashboard";
+import About from "./About";
+import DashboardLayout from "../../../layouts/Dashboard";
 import React, { useState } from "react";
 import { Button, Container, Stepper, Step, StepLabel } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  nextStep,
+  preStep,
+} from "../../../redux/slices/add-new-college-step-form";
 
 const steps = [
   "About",
@@ -33,14 +38,15 @@ const steps = [
 ]; // Add more steps as needed
 
 const AddNewCollege = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const dispatch = useDispatch();
+  const activeStep = useSelector((state) => state.activeStep);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    dispatch(nextStep());
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    dispatch(preStep());
   };
 
   return (
