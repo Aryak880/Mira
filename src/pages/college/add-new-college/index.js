@@ -1,6 +1,8 @@
 import About from "./About";
 import ContactDetails from "./ContactDetails";
 import ManagementContact from "./ManagementContact";
+import CoursesAndFees from './CoursesAndFees'
+import EntranceExams from "./EntranceExams";
 import DashboardLayout from "../../../layouts/Dashboard";
 import React from "react";
 import { Button, Container, Stepper, Step, StepLabel } from "@mui/material";
@@ -65,7 +67,7 @@ const AddNewCollege = () => {
             {activeStep === 0 && <About />}
             {activeStep === 1 && <ContactDetails />}
             {activeStep === 2 && <ManagementContact />}
-            {activeStep === 3 && <Exams />}
+            {activeStep === 3 && <EntranceExams />}
             {activeStep === 4 && <CoursesAndFees />}
             {activeStep === 5 && <Photos />}
             {activeStep === 6 && <Results />}
@@ -93,12 +95,6 @@ const AddNewCollege = () => {
   );
 };
 
-// Sample step components (replace with your own step components)
-// const About = () => <div>About Content</div>;
-// const ContactDetails = () => <div>Contact Details Content</div>;
-// const ManagementContact = () => <div>ManagementContact Content</div>;
-const Exams = () => <div>Exams Content</div>;
-const CoursesAndFees = () => <div>CoursesAndFees Content</div>;
 const Photos = () => <div>Photos Content</div>;
 const Results = () => <div>Results Content</div>;
 const Faculties = () => <div>Faculties Content</div>;

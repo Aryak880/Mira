@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Grid, Typography } from "@mui/material";
 
-const MyForm = () => {
+const ManagementContact = () => {
   const [contacts, setContacts] = useState([
     { name: "", role: "", email: "" },
     { mobile: "", col2: "", col3: "" },
@@ -144,4 +144,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default ManagementContact;
