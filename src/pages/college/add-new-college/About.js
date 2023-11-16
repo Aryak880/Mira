@@ -7,8 +7,6 @@ import {
   Checkbox,
   Grid,
   TextField,
-  FormControl,
-  InputLabel,
   Container,
   Typography,
 } from "@mui/material";
@@ -100,15 +98,6 @@ const About = () => {
       <Grid container spacing={2}>
         {/* Row 1 */}
         <Grid item xs={12} sm={2}>
-          {/* <FormControl fullWidth>
-            <InputLabel htmlFor="image">Image</InputLabel>
-            <input
-              type="file"
-              accept="image/*"
-              id="image"
-              onChange={handleFileChange}
-            />
-          </FormControl> */}
           <label
             htmlFor="image"
             style={{
@@ -209,11 +198,11 @@ const About = () => {
         <Grid item xs={12} sm={6}>
           <Typography>Hours of Operation</Typography>
           <Grid container spacing={2}>
-            <Typography>Open</Typography>
+            {/* <Typography>Open</Typography> */}
             <Grid item xs={6}>
               <TextField
                 fullWidth
-                // label="Open"
+                label="Open"
                 type="time"
                 value={formData.startTime}
                 onChange={handleInputChange("startTime")}
@@ -223,10 +212,10 @@ const About = () => {
               />
             </Grid>
             <Grid item xs={6}>
-              <Typography>Close</Typography>
+              {/* <Typography>Close</Typography> */}
               <TextField
                 fullWidth
-                // label="Close"
+                label="Close"
                 type="time"
                 value={formData.endTime}
                 onChange={handleInputChange("endTime")}
