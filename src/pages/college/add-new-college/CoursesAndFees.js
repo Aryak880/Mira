@@ -22,7 +22,7 @@ const CoursesAndFees = () => {
             <Typography>Select Exam for the course</Typography>
             <FormControl fullWidth>
               <InputLabel>Select/ Type Here</InputLabel>
-              <Select>
+              <Select defaultValue={""}>
                 <MenuItem value="exam1">Exam 1</MenuItem>
                 <MenuItem value="exam2">Exam 2</MenuItem>
                 {/* Add more exam options as needed */}
@@ -33,7 +33,7 @@ const CoursesAndFees = () => {
             <Typography>Course Duration</Typography>
             <FormControl fullWidth>
               <InputLabel>Select/ Type Here</InputLabel>
-              <Select>
+              <Select defaultValue={""}>
                 <MenuItem value="1">1 Year</MenuItem>
                 <MenuItem value="2">2 Years</MenuItem>
                 {/* Add more duration options as needed */}
@@ -44,7 +44,7 @@ const CoursesAndFees = () => {
             <Typography>Degree Offered</Typography>
             <FormControl fullWidth>
               <InputLabel>Select/ Type Here</InputLabel>
-              <Select>
+              <Select defaultValue={""}>
                 <MenuItem value="degree1">Degree 1</MenuItem>
                 <MenuItem value="degree2">Degree 2</MenuItem>
                 {/* Add more degree options as needed */}
@@ -68,7 +68,7 @@ const CoursesAndFees = () => {
               <Typography>Total Fees</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="fees1">Fees 1</MenuItem>
                   <MenuItem value="fees2">Fees 2</MenuItem>
                   {/* Add more fees options as needed */}
@@ -79,7 +79,7 @@ const CoursesAndFees = () => {
               <Typography>Eligibility Criteria</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="criteria1">Criteria 1</MenuItem>
                   <MenuItem value="criteria2">Criteria 2</MenuItem>
                   {/* Add more eligibility criteria options as needed */}
@@ -93,7 +93,7 @@ const CoursesAndFees = () => {
               <Typography>Total Fees</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="fees1">Fees 1</MenuItem>
                   <MenuItem value="fees2">Fees 2</MenuItem>
                   {/* Add more fees options as needed */}
@@ -104,7 +104,7 @@ const CoursesAndFees = () => {
               <Typography>Eligibility Criteria</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="criteria1">Criteria 1</MenuItem>
                   <MenuItem value="criteria2">Criteria 2</MenuItem>
                   {/* Add more eligibility criteria options as needed */}
@@ -121,7 +121,7 @@ const CoursesAndFees = () => {
               <Typography>Select Exam for the course</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="exam1">Exam 1</MenuItem>
                   <MenuItem value="exam2">Exam 2</MenuItem>
                   {/* Add more exam options as needed */}
@@ -132,7 +132,7 @@ const CoursesAndFees = () => {
               <Typography>Course Duration</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="1">1 Year</MenuItem>
                   <MenuItem value="2">2 Years</MenuItem>
                   {/* Add more duration options as needed */}
@@ -143,7 +143,7 @@ const CoursesAndFees = () => {
               <Typography>Degree Offered</Typography>
               <FormControl fullWidth>
                 <InputLabel>Select/ Type Here</InputLabel>
-                <Select>
+                <Select defaultValue={""}>
                   <MenuItem value="degree1">Degree 1</MenuItem>
                   <MenuItem value="degree2">Degree 2</MenuItem>
                   {/* Add more degree options as needed */}
@@ -167,7 +167,7 @@ const CoursesAndFees = () => {
                 <Typography>Total Fees</Typography>
                 <FormControl fullWidth>
                   <InputLabel>Select/ Type Here</InputLabel>
-                  <Select>
+                  <Select defaultValue={""}>
                     <MenuItem value="fees1">Fees 1</MenuItem>
                     <MenuItem value="fees2">Fees 2</MenuItem>
                     {/* Add more fees options as needed */}
@@ -178,7 +178,7 @@ const CoursesAndFees = () => {
                 <Typography>Eligibility Criteria</Typography>
                 <FormControl fullWidth>
                   <InputLabel>Select/ Type Here</InputLabel>
-                  <Select>
+                  <Select defaultValue={""}>
                     <MenuItem value="criteria1">Criteria 1</MenuItem>
                     <MenuItem value="criteria2">Criteria 2</MenuItem>
                     {/* Add more eligibility criteria options as needed */}
@@ -192,7 +192,7 @@ const CoursesAndFees = () => {
                 <Typography>Total Fees</Typography>
                 <FormControl fullWidth>
                   <InputLabel>Select/ Type Here</InputLabel>
-                  <Select>
+                  <Select defaultValue={""}>
                     <MenuItem value="fees1">Fees 1</MenuItem>
                     <MenuItem value="fees2">Fees 2</MenuItem>
                     {/* Add more fees options as needed */}
@@ -203,7 +203,7 @@ const CoursesAndFees = () => {
                 <Typography>Eligibility Criteria</Typography>
                 <FormControl fullWidth>
                   <InputLabel>Select/ Type Here</InputLabel>
-                  <Select>
+                  <Select defaultValue={""}>
                     <MenuItem value="criteria1">Criteria 1</MenuItem>
                     <MenuItem value="criteria2">Criteria 2</MenuItem>
                     {/* Add more eligibility criteria options as needed */}
