@@ -1,18 +1,17 @@
-// import React from "react";
-
-// function AddNewCollege() {
-//   return <div>AddNewCollege</div>;
-// }
-
-// AddNewCollege.getLayout = function getLayout(page) {
-//   return <DashboardLayout>{page}</DashboardLayout>;
-// };
-// export default AddNewCollege;
-// MultistepForm.js
-
-import DashboardLayout from "../../layouts/Dashboard";
-import React, { useState } from "react";
+import About from "./About";
+import ContactDetails from "./ContactDetails";
+import ManagementContact from "./ManagementContact";
+import CoursesAndFees from "./CoursesAndFees";
+import EntranceExams from "./EntranceExams";
+import DashboardLayout from "../../../layouts/Dashboard";
+import React from "react";
 import { Button, Container, Stepper, Step, StepLabel } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  nextStep,
+  preStep,
+  toStep,
+} from "../../../redux/slices/add-new-college-step-form";
 
 const steps = [
   "About",
@@ -33,21 +32,26 @@ const steps = [
 ]; // Add more steps as needed
 
 const AddNewCollege = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const dispatch = useDispatch();
+  const activeStep = useSelector((state) => state.activeStep);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    dispatch(nextStep());
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    dispatch(preStep());
+  };
+
+  const handleToStep = (step) => {
+    dispatch(toStep(step));
   };
 
   return (
     <Container>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label, index) => (
-          <Step key={index}>
+          <Step key={index} onClick={() => handleToStep(index)}>
             <StepLabel>{label}</StepLabel>
           </Step>
         ))}
@@ -63,7 +67,7 @@ const AddNewCollege = () => {
             {activeStep === 0 && <About />}
             {activeStep === 1 && <ContactDetails />}
             {activeStep === 2 && <ManagementContact />}
-            {activeStep === 3 && <Exams />}
+            {activeStep === 3 && <EntranceExams />}
             {activeStep === 4 && <CoursesAndFees />}
             {activeStep === 5 && <Photos />}
             {activeStep === 6 && <Results />}
@@ -91,12 +95,6 @@ const AddNewCollege = () => {
   );
 };
 
-// Sample step components (replace with your own step components)
-const About = () => <div>About Content</div>;
-const ContactDetails = () => <div>Contact Details Content</div>;
-const ManagementContact = () => <div>ManagementContact Content</div>;
-const Exams = () => <div>Exams Content</div>;
-const CoursesAndFees = () => <div>CoursesAndFees Content</div>;
 const Photos = () => <div>Photos Content</div>;
 const Results = () => <div>Results Content</div>;
 const Faculties = () => <div>Faculties Content</div>;

@@ -136,6 +136,47 @@ const pagesSection = [
       {
         href: "/college/add-new-college",
         title: "Add new college",
+        // children: [
+        //   {
+        //     href: "",
+        //     title: "About",
+        //     step: 0,
+        //   },
+        //   {
+        //     href: "",
+        //     title: "Contact Details",
+        //     step: 1,
+        //   },
+        //   {
+        //     href: "",
+        //     title: "Management Contact",
+        //     step: 2,
+        //   },
+        //   { href: "/college/add-new-college/exams", title: "Exams" },
+        //   {
+        //     href: "/college/add-new-college/courses-and-fees",
+        //     title: "Courses and Fees",
+        //   },
+        //   { href: "/college/add-new-college/photos", title: "Photos" },
+        //   { href: "/college/add-new-college/results", title: "Results" },
+        //   { href: "/college/add-new-college/faculties", title: "Faculties" },
+        //   { href: "/college/add-new-college/reviews", title: "Reviews" },
+        //   { href: "/college/add-new-college/videos", title: "Videos" },
+        //   {
+        //     href: "/college/add-new-college/study-material",
+        //     title: "Study Material",
+        //   },
+        //   { href: "/college/add-new-college/location", title: "Location" },
+        //   {
+        //     href: "/college/add-new-college/company-details",
+        //     title: "Company Details",
+        //   },
+        //   { href: "/college/add-new-college/checklist", title: "Checklist" },
+        //   {
+        //     href: "/college/add-new-college/frequently-asked-questions",
+        //     title: "Frequently Asked Questions",
+        //   },
+        // ],
       },
       {
         href: "/college/update-college",
