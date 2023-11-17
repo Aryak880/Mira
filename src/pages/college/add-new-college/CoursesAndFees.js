@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Container, Grid, TextField, Select, MenuItem, FormControl, InputLabel, Typography , Button} from '@mui/material';
+import React, {useState} from 'react'
+import { Container, Grid, TextField, Select, MenuItem, FormControl, InputLabel, Typography , Button} from '@mui/material'
 
 const CoursesAndFees = () => {
     const [anotherCourse, setAnotherCourse] = useState([])
